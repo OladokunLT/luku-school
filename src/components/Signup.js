@@ -11,17 +11,17 @@ function Signup() {
 
   const {createUser} = UserAuth();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setError("");
     try {
-      await createUser(email, password)
+     createUser(email, password)
       navigate("/dashboard")
     } catch (e) {
       setError(e.message);
-      // console.log(e.message)
+      console.log(e.message)
     }
-  }  
+  };  
 
   return (
     <div>
@@ -33,11 +33,11 @@ function Signup() {
       </div>
       <form onSubmit={handleSubmit}>
         <div className="">
-          <label htmlFor="" >Email Address </label>
+          <label>Email Address </label>
           <input type="email" onChange={(e) => setEmail(e.target.value)} /> 
         </div>
         <div className="">
-          <label htmlFor="">Password</label>
+          <label >Password</label>
           <input type="password" onChange={(e) => setPassword(e.target.value)}/>
         </div>
         <div>
