@@ -1,26 +1,47 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { UserAuth } from '../context/AuthContext'; 
 
 function Signup() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const navigate = useNavigate();
+
+  const {createUser} = UserAuth();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+    try {
+      await createUser(email, password)
+      navigate("/dashboard")
+    } catch (e) {
+      setError(e.message);
+      // console.log(e.message)
+    }
+  }  
+
   return (
     <div>
       <div>
-        <h1>Sign in to your account</h1>
+        <h1>Sign up an your account</h1>
         <p>
-          Already have an account yet? <Link to="/">Sign up</Link>
+          Already have an account? <Link to="/signin">Sign in</Link>  
         </p>
       </div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="">
           <label htmlFor="" >Email Address </label>
-          <input type="email" /> 
+          <input type="email" onChange={(e) => setEmail(e.target.value)} /> 
         </div>
         <div className="">
           <label htmlFor="">Password</label>
-          <input type="password" />
+          <input type="password" onChange={(e) => setPassword(e.target.value)}/>
         </div>
         <div>
-          <button>Sign up</button>
+          <button>Sign up</button>  {/*configure this for signup*/}
         </div>
       </form>
     </div>
