@@ -1,7 +1,28 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
+import { UserAuth } from '../context/AuthContext';
 
 function Signin() {
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+  const { signIn } = UserAuth();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('')
+    try {
+      await signIn(email, password)
+      navigate('/dashboard')
+    } catch (e) {
+      setError(e.message)
+      console.log(e.message)
+    }
+  };
+
+
   return (
     <div>
       <section className='left-side'>
@@ -14,14 +35,14 @@ function Signin() {
         </div>
       </section>
       
-      <form className='right-side'>
+      <form onSubmit={handleSubmit} className='right-side'>
         <div className="">
-          <label htmlFor="" >Email Address </label>
-          <input type="email" /> 
+          <label>Email Address </label>
+          <input type="email" onChange={(e) => setEmail(e.target.value)} /> 
         </div>
         <div className="">
-          <label htmlFor="">Password</label>
-          <input type="password" />
+          <label>Password</label>
+          <input type="password" onChange={(e) => setPassword(e.target.value)} />
         </div>
         <div>
           <button>Sign in</button>
