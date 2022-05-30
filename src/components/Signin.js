@@ -1,4 +1,6 @@
+import { async } from '@firebase/util';
 import React, { useState } from 'react'
+import GoogleButton from "react-google-button"
 import { Link, useNavigate } from 'react-router-dom';
 import { UserAuth } from '../context/AuthContext';
 
@@ -8,7 +10,7 @@ function Signin() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
-  const { signIn } = UserAuth();
+  const { signIn, googleSignIn } = UserAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,6 +23,17 @@ function Signin() {
       console.log(e.message)
     }
   };
+
+  const handleGoogleSignIn = async (e) => {
+    e.preventDefault();
+    try {
+      await googleSignIn();
+      navigate("/dashboard")
+    } catch (e) {
+      setError(e.message);
+      console.log(e.message)
+    }
+  }
 
 
   return (
@@ -47,9 +60,15 @@ function Signin() {
         <div>
           <button>Sign in</button>
         </div>
-        <p>
-          Don't have an account yet? <Link to="/signup"><button>Sign up</button></Link>
-        </p>
+        <div>
+          <strong>OR</strong>
+          <GoogleButton
+            onClick={handleGoogleSignIn}
+          />  
+          <p>
+            Don't have an account yet? <Link to="/signup"><button>Sign up</button></Link>
+          </p>
+        </div>
       </form>
     </div>
   )
