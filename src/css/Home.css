@@ -34,14 +34,12 @@
 }
 .home article {
     width: 50vw;
-    border: solid red;
     text-align: center;
     font-size: larger;
     display: flex;
 }
 .home figure {
     width: 45vw;
-    border: solid;
     display: flex; 
 }
 @media (max-width: 768px ) {

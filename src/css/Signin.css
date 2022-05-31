@@ -1,0 +1,39 @@
+
+.signin {
+    display: flex;
+    width: 90vw;
+    margin: auto;
+    gap: 10px;
+}
+form {
+    
+}
+form .field-group {
+    display: flex;
+    flex-direction: column;
+}
+form input {
+    padding: 5px 2px;
+    margin: 5px;
+    width: 240px;
+    font-size: 16px;
+}
+
+form .btn {
+    margin: 2px;
+    padding: 5px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #0d6efd;
+}
+form .signup-link {
+    margin: 5px 0;
+}
+@media (max-width: 768px) {
+    .left-side {
+        
+        display: none;
+    }    
+}
+
+
