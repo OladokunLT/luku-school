@@ -2,6 +2,8 @@ import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { UserAuth } from '../context/AuthContext';
+import  "../css/customstyle.css"
+import exam from "../assets/exam.svg"
 
 
 
@@ -20,22 +22,37 @@ function Dashboard() {
   };
 
   return (
-    <div>
-      <nav className="side-nav">
-        <Link to='#'><div>Dashboard</div></Link>
-        <Link to='courses'><div>Courses</div></Link>
-        <Link to='profile'><div>Profile</div></Link>
-        <button onClick={handleSignout}> Logout </button>
-      </nav>        
-      <main>
-        <article className='text-area'>
-          <h1>Welcome <em>{user && user.email}</em></h1>
-        </article>
-        <div className="icon-container">
-          <img src="" alt="student sitting and holding book" />
+    <div className='dashboard'>
+      <div className='welcome'>
+        <div className='greet-section'>
+          <div>
+            <p className='welcome-msg'>Welcome <b>{user && user.email}</b></p>
+            <p>You have logged in to dashboard. Proceed to your course or view your profile</p>
+          </div>
+          <div className='welcome-img'>
+            <img src={exam}  alt="student sitting and holding book" />
+          </div>
         </div>
-      </main>
-      <Outlet />
+      </div>
+
+      <section className='nav'>
+        <nav className="side-nav">
+          <Link to='#'><div>Dashboard</div></Link>
+          <Link to='courses'><div>Courses</div></Link>
+          <Link to='profile'><div>Profile</div></Link>
+          <button className="btn-signout" onClick={handleSignout}> Logout </button>
+        </nav>        
+        <main>
+          <article className='text-area'>
+            <Outlet />
+          </article>
+          <div className="icon-container">
+            
+          </div>
+        </main>
+      </section>
+      
+      
     </div>
   )
 }

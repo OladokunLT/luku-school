@@ -1,5 +1,6 @@
 import React from 'react';
 import subjects from './db';
+import "../css/courses.css"
 
 function Courses() {
   return (
@@ -9,11 +10,11 @@ function Courses() {
       <section className="container">
         {subjects.map((course) => (
           <div className="card" key={course.id}>
-            <div className='name'>{course.name}</div>
+            <div className='course-name'>{course.name}</div>
            
            
-            <div className='branches'>{course.details.branches}</div>
-            <div className='intro'>{course.details.intro}</div>
+            {/* <div className='branches'>{course.details.branches}</div>
+            <div className='intro'>{course.details.intro}</div> */}
 
           </div>
           

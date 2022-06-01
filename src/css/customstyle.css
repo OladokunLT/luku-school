@@ -1,0 +1,49 @@
+.nav {
+    display: flex;
+} 
+.welcome {
+    background-color: #669E00;
+    color: white;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.side-nav div {
+    margin: 10px 5px 10px 0;
+    padding: 10px;
+    background-color: #669E00;
+    border-right: #669E00 solid 5px;
+    color: white;
+}
+.side-nav div:hover {
+    background-color: #0D6EFD;
+    border-right: #0D6EFD solid 5px;
+}
+a {
+    text-decoration: none;
+}
+.greet-section {
+    display: flex;
+    max-height: 30vh;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.welcome-img img{
+    width: 100%;
+    height: 20vh; 
+    display: ;
+}
+section main article {
+    margin-top: 10px;
+}
+.btn-signout {
+    background-color: #669E00;
+    border: unset;
+    padding: 12px 45px 12px 12px;
+    font-size: 15px;
+    color: white;    
+}
+
+
+
+

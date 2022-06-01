@@ -1,0 +1,19 @@
+.course-name {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.course-name:nth-child(odd){
+    background-color: #0d6efd;
+}
+.course-name:nth-child(even){
+    background-color: #669e00;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 5px;
+}
