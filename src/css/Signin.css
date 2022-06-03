@@ -36,11 +36,12 @@ form .btn {
 form .signup-link {
     margin: 5px 0;
 }
-@media (max-width: 768px) {
-    .left-side {
-        
-        display: ;
-    }    
+.error {
+    color: red;
+    font-size: 12px;
+    font-weight: bold;
 }
+
+
 
 

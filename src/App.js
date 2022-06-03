@@ -9,6 +9,7 @@ import Courses from "./components/Courses";
 import Profile from "./components/Profile";
 import { AuthContextProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
+import Coursedetail from './components/Coursedetail';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/signin' element={<Signin />} />
           <Route path='/signup' element={<Signup />} />
+          
           <Route 
             path='/dashboard' 
             element= {
@@ -30,6 +32,8 @@ function App() {
             <Route path='/dashboard/courses' element={<Courses />} />
             <Route path='/dashboard/profile' element={<Profile />} />
           </Route>
+          
+          <Route path='/course/:id' element={<Coursedetail/>} />
         </Routes>
       </AuthContextProvider>
       

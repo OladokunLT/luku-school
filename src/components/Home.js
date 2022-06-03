@@ -13,8 +13,7 @@ function Home() {
           <Link to="/signin">
             <button className='btn'>Sign in</button>
           </Link>
-        </nav>
-        
+        </nav> 
       </header>
 
       <main>
@@ -22,7 +21,7 @@ function Home() {
              LukuSchool provides for capacity development 
               in the O'level subjects by providing 
               training and mentorship to students.
-          </article>
+        </article>
         <figure classname="home-fig">
           <img src={hero} width="100%" alt="person with book" />
         </figure>

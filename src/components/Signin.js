@@ -61,6 +61,7 @@ function Signin() {
         </div>
         <div className="div-btn">
           <button className='btn'>Sign in</button>
+          {error && <p className='error'> {error}</p>}
         </div>
         <div>
         <p className='signup-link'>

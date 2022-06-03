@@ -3,14 +3,11 @@ import { Link, useNavigate } from 'react-router-dom'
 import { UserAuth } from '../context/AuthContext'; 
 import "../css/Signin.css"
 
-
 function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-
   const navigate = useNavigate();
-
   const {createUser} = UserAuth();
 
   const handleSubmit = (e) => {
@@ -18,18 +15,17 @@ function Signup() {
     setError("");
     try {
      createUser(email, password)
-      navigate("/dashboard")
+      navigate("/signup")
     } catch (e) {
       setError(e.message);
       console.log(e.message)
-      alert(e.message)
     }
   };  
 
   return (
     <div>
       <div>
-        <h1>Sign up an your account</h1>
+        <h1>Sign up an account</h1>
         
       </div>
       <form onSubmit={handleSubmit}>
@@ -42,7 +38,8 @@ function Signup() {
           <input type="password" onChange={(e) => setPassword(e.target.value)}/>
         </div>
         <div>
-          <button className='btn'>Sign up</button>  {/*configure this for signup*/}
+          <button className='btn'>Sign up</button>
+          {error && <p className='error'> {error} </p>}
         </div>
         <p>
           Already have an account? <Link to="/signin">Sign in</Link>  

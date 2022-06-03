@@ -1,11 +1,8 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { UserAuth } from '../context/AuthContext';
 import  "../css/customstyle.css"
 import exam from "../assets/exam.svg"
-
-
 
 function Dashboard() {
   const { user, signout } = UserAuth();
@@ -23,6 +20,7 @@ function Dashboard() {
 
   return (
     <div className='dashboard'>
+    
       <div className='welcome'>
         <div className='greet-section'>
           <div>
@@ -37,22 +35,19 @@ function Dashboard() {
 
       <section className='nav'>
         <nav className="side-nav">
-          <Link to='#'><div>Dashboard</div></Link>
+          <Link to='/dashboard'><div>Dashboard</div></Link>
           <Link to='courses'><div>Courses</div></Link>
           <Link to='profile'><div>Profile</div></Link>
           <button className="btn-signout" onClick={handleSignout}> Logout </button>
-        </nav>        
+        </nav>
+
         <main>
           <article className='text-area'>
             <Outlet />
           </article>
-          <div className="icon-container">
-            
-          </div>
         </main>
       </section>
-      
-      
+    
     </div>
   )
 }
