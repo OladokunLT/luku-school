@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/luku-school/static/css/main.d7c6d3f6.css",
-    "main.js": "/luku-school/static/js/main.c9c696b2.js",
+    "main.js": "/luku-school/static/js/main.6f96333a.js",
     "static/media/programmer.svg": "/luku-school/static/media/programmer.8579d0e33b7d84c5c5304b08a9709a07.svg",
     "static/media/exam.svg": "/luku-school/static/media/exam.e8a2acffc4638a3bdf1f1825a0058cde.svg",
     "static/media/hero.svg": "/luku-school/static/media/hero.ce1dd05a84a91a52eb8cffaf6b3b82e6.svg",
     "index.html": "/luku-school/index.html",
     "main.d7c6d3f6.css.map": "/luku-school/static/css/main.d7c6d3f6.css.map",
-    "main.c9c696b2.js.map": "/luku-school/static/js/main.c9c696b2.js.map"
+    "main.6f96333a.js.map": "/luku-school/static/js/main.6f96333a.js.map"
   },
   "entrypoints": [
     "static/css/main.d7c6d3f6.css",
-    "static/js/main.c9c696b2.js"
+    "static/js/main.6f96333a.js"
   ]
 }
