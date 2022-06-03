@@ -29,7 +29,7 @@ function Signin() {
     e.preventDefault();
     try {
       await googleSignIn();
-      // navigate("/dashboard")
+       navigate("/dashboard")
     } catch (e) {
       setError(e.message);
       console.log(e.message)
