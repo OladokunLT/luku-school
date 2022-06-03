@@ -15,7 +15,7 @@ function Signup() {
     setError("");
     try {
      createUser(email, password)
-      navigate("/signup")
+      navigate("/dashboard")
     } catch (e) {
       setError(e.message);
       console.log(e.message)

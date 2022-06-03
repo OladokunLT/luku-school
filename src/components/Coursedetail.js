@@ -6,11 +6,11 @@ function Coursedetail() {
   const { id } = useParams();
   return (
     <div className="coursedetail" style={{padding: "20px"}}>
-        <button style={{backgroundColor: "black"}}>
+        <button style={{backgroundColor: "yellow", padding:"5px 10px"}}>
            <Link to="/dashboard/courses"> -- Back to All Courses</Link>
         </button>
       <h2>Course Detail</h2>
-            {console.log(subjects)};
+            {console.log(subjects)}
       <div>
         {subjects
           .filter((detail) => detail.id == id)

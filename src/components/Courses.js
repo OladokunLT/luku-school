@@ -9,9 +9,9 @@ function Courses() {
       <h1>Available courses</h1>
         {console.log(subjects)}
         
-      <section className="container">
+      <section className="container singleLink">
         {subjects.map((course) => (
-          <Link to={`/course/${course.id}`}>
+          <Link to={`/course/${course.id}`} >
             <div className="card" key={course.id} title="click to see detail">
               <div className='course-name'>{course.name}</div>
             </div>
