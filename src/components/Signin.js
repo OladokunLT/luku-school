@@ -40,7 +40,7 @@ function Signin() {
     if(user != null){
       navigate("/dashboard")
     }
-  },[user])
+  },[])
 
 
   return (
