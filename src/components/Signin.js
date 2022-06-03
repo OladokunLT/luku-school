@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import GoogleButton from "react-google-button"
 import { Link, useNavigate } from 'react-router-dom';
 import { UserAuth } from '../context/AuthContext';
@@ -11,7 +11,7 @@ function Signin() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
-  const { signIn, googleSignIn } = UserAuth();
+  const { signIn, googleSignIn, user } = UserAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,12 +29,18 @@ function Signin() {
     e.preventDefault();
     try {
       await googleSignIn();
-      navigate("/dashboard")
+      // navigate("/dashboard")
     } catch (e) {
       setError(e.message);
       console.log(e.message)
     }
   }
+
+  useEffect(()=>{
+    if(user != null){
+      navigate("/dashboard")
+    }
+  },[user])
 
 
   return (
